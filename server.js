@@ -1,4 +1,9 @@
 const express = require('express')
+const morgan = require('morgan');
+
+
+const conexionMongoose = require('./conexion')
+
 const app = express();
 
 
@@ -6,7 +11,7 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 
 // Middlewares - son funciones que se ejecutan antes de que llegen a las rutas
-
+app.use(morgan('dev'))
 
 // Routes 
 
